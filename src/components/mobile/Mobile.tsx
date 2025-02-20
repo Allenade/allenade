@@ -1,12 +1,5 @@
 import { Button } from "../ui/button";
-import {
-  ChevronRight,
-  Github,
-  Linkedin,
-  Mail,
-  Menu,
-  Twitter,
-} from "lucide-react";
+import { ChevronRight, Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 import Image from "next/image";
 import { ToggleTheme } from "../layouts/toggle-theme";
