@@ -1,12 +1,16 @@
 import { Button } from "../ui/button";
-import { Github, Twitter, Mail, Eye } from "lucide-react";
+import { Github, Twitter, Mail, Eye, Linkedin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { projects } from "@/lib/data";
 import Image from "next/image";
+import { ToggleTheme } from "../layouts/toggle-theme";
 
 export const Desktop = () => {
   return (
     <div className="min-h-screen">
+      <div className="flex justify-center p-4">
+        <ToggleTheme />
+      </div>
       <main className="container mx-auto px-8 py-8">
         <div className="flex ">
           {/* Left side hero section */}
@@ -91,25 +95,57 @@ export const Desktop = () => {
                 variant="outline"
                 size="sm"
                 className="text-gray-400 hover:text-white animate-bounce [animation-delay:200ms]"
+                asChild
               >
-                <Github className="h-5 w-5 mr-2" />
-                Github
+                <a
+                  href="https://github.com/allenade"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github className="h-5 w-5 mr-2" />
+                  Github
+                </a>
               </Button>
               <Button
                 variant="outline"
                 size="sm"
                 className="text-gray-400 hover:text-white animate-bounce [animation-delay:400ms]"
+                asChild
               >
-                <Twitter className="h-5 w-5 mr-2" />
-                Twitter
+                <a
+                  href="https://twitter.com/Allen_nade"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Twitter className="h-5 w-5 mr-2" />
+                  Twitter
+                </a>
               </Button>
               <Button
                 variant="outline"
                 size="sm"
                 className="text-gray-400 hover:text-white dark:hover:text-black animate-bounce [animation-delay:600ms]"
+                asChild
               >
-                <Mail className="h-5 w-5 mr-2" />
-                Email
+                <a href="mailto:allenumunade@gmail.com">
+                  <Mail className="h-5 w-5 mr-2" />
+                  Email
+                </a>
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="text-gray-400 hover:text-white dark:hover:text-black animate-bounce [animation-delay:600ms]"
+                asChild
+              >
+                <a
+                  href="https://www.linkedin.com/in/allen-umunade-662489210/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin className="h-5 w-5 mr-2" />
+                  LinkedIn
+                </a>
               </Button>
             </footer>
           </div>
