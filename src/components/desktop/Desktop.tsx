@@ -189,15 +189,22 @@ export const Desktop = () => {
           {/* right side projects section */}
           <div className="w-1/2 overflow-y-auto pr-4 h-full">
             {projects.map(
-              ({
-                id,
-                category,
-                title,
-                description,
-                technologies,
-                liveLink,
-              }) => (
-                <div key={id} className="mb-6">
+              (
+                { id, category, title, description, technologies, liveLink },
+                index
+              ) => (
+                <motion.div
+                  key={id}
+                  className="mb-6"
+                  initial={{ opacity: 0, y: -50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.2,
+                    ease: "easeOut",
+                  }}
+                  whileHover={{ scale: 1.02 }}
+                >
                   <Card className="bg-zinc-900 px-4 border-zinc-800">
                     <CardHeader>
                       <div className="text-xs text-zinc-500 mb-2">
@@ -207,9 +214,9 @@ export const Desktop = () => {
                         {title}
                       </CardTitle>
                       <div className="flex flex-wrap gap-2 mt-2">
-                        {technologies.map((tech, index) => (
+                        {technologies.map((tech) => (
                           <span
-                            key={index}
+                            key={tech}
                             className="bg-zinc-800 text-zinc-400 px-2 py-1 rounded"
                           >
                             {tech}
@@ -236,7 +243,7 @@ export const Desktop = () => {
                       </Button>
                     </CardContent>
                   </Card>
-                </div>
+                </motion.div>
               )
             )}
           </div>

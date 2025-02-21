@@ -10,19 +10,33 @@ import Link from "next/link";
 
 export const Mobile = () => {
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen">
       <nav className="flex justify-between items-center p-4">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <h1 className="text-3xl font-bold">Allenade.</h1>
-        </div>
-        <div className="flex justify-center p-4">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex justify-center p-4"
+        >
           <ToggleTheme />
-        </div>
+        </motion.div>
       </nav>
       {/* main section */}
       <main className="space-y-6 flex flex-col items-center">
         {/* Profile Image */}
-        <div className="flex justify-center mt-4">
+        <motion.div
+          className="flex justify-center mt-4"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="relative w-[200px] h-[200px] flex items-center justify-center">
             {/* Rotating Border */}
             <div className="absolute w-[200px] h-[200px] rounded-full border-[3px] border-green-500 border-t-transparent border-r-transparent animate-spin"></div>
@@ -37,16 +51,38 @@ export const Mobile = () => {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Text Content */}
-        <div className="space-y-4 text-center px-8 max-w-2xl">
-          <h1 className="text-3xl font-light tracking-tight text-black dark:text-white">
+        <motion.div
+          className="space-y-4 text-center px-8 max-w-2xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <motion.h1
+            className="text-3xl font-light tracking-tight text-black dark:text-white"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             Hello, I&apos;m
-            <span className="block">Umunade Allen.</span>
-          </h1>
+            <motion.span
+              className="block"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              Umunade Allen.
+            </motion.span>
+          </motion.h1>
 
-          <p className="text-base dark:text-gray-400 text-gray-600">
+          <motion.p
+            className="text-base dark:text-gray-400 text-gray-600"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
             I&apos;m a{" "}
             <span className="dark:text-white text-black">
               software engineer
@@ -57,9 +93,14 @@ export const Mobile = () => {
               frontend technology
             </span>
             .
-          </p>
+          </motion.p>
 
-          <p className="text-base dark:text-gray-400 text-gray-600">
+          <motion.p
+            className="text-base dark:text-gray-400 text-gray-600"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             I am interested in{" "}
             <span className="dark:text-white text-black">user experience</span>,
             accessibility,{" "}
@@ -68,15 +109,23 @@ export const Mobile = () => {
             </span>
             , gaming, <span className="dark:text-white text-black">web3</span>,
             web animations.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         {/* Projects */}
-        <Link href="/projects">
-          <Button variant="outline">
-            <span>Explore</span>
-            <ChevronRight />
-          </Button>
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <Link href="/projects">
+            <Button variant="outline">
+              <span>Explore</span>
+              <ChevronRight />
+            </Button>
+          </Link>
+        </motion.div>
 
         {/* footer */}
         <footer className="flex items-center gap-4 py-8">
