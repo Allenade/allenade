@@ -1,9 +1,12 @@
+"use client";
+
 import { Button } from "../ui/button";
 import { Github, Twitter, Mail, Eye, Linkedin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { projects } from "@/lib/data";
 import Image from "next/image";
 import { ToggleTheme } from "../layouts/toggle-theme";
+import { motion } from "framer-motion";
 
 export const Desktop = () => {
   return (
@@ -39,8 +42,7 @@ export const Desktop = () => {
                 design engineering
               </span>
               , gaming, <span className="dark:text-white text-black">web3</span>
-              , web animations, and{" "}
-              <span className="dark:text-white text-black">golang</span>.
+              , web animations{" "}
             </p>
 
             {/* image */}
@@ -91,62 +93,97 @@ export const Desktop = () => {
               </div>
 
               {/* Buttons with different bounce effects */}
-              <Button
-                variant="outline"
-                size="sm"
-                className="text-gray-400 hover:text-white animate-bounce [animation-delay:200ms]"
-                asChild
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
               >
-                <a
-                  href="https://github.com/allenade"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-gray-400 hover:text-white"
+                  asChild
                 >
-                  <Github className="h-5 w-5 mr-2" />
-                  Github
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="text-gray-400 hover:text-white animate-bounce [animation-delay:400ms]"
-                asChild
+                  <a
+                    href="https://github.com/allenade"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="h-5 w-5 mr-2" />
+                    Github
+                  </a>
+                </Button>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
               >
-                <a
-                  href="https://twitter.com/Allen_nade"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-gray-400 hover:text-white"
+                  asChild
                 >
-                  <Twitter className="h-5 w-5 mr-2" />
-                  Twitter
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="text-gray-400 hover:text-white dark:hover:text-black animate-bounce [animation-delay:600ms]"
-                asChild
+                  <a
+                    href="https://twitter.com/allenade_dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Twitter className="h-5 w-5 mr-2" />
+                    Twitter
+                  </a>
+                </Button>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
               >
-                <a href="mailto:allenumunade@gmail.com">
-                  <Mail className="h-5 w-5 mr-2" />
-                  Email
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="text-gray-400 hover:text-white dark:hover:text-black animate-bounce [animation-delay:600ms]"
-                asChild
-              >
-                <a
-                  href="https://www.linkedin.com/in/allen-umunade-662489210/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-gray-400 hover:text-white"
+                  asChild
                 >
-                  <Linkedin className="h-5 w-5 mr-2" />
-                  LinkedIn
-                </a>
-              </Button>
+                  <a href="mailto:umunadeallan@gmail.com">
+                    <Mail className="h-5 w-5 mr-2" />
+                    Email
+                  </a>
+                </Button>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-gray-400 hover:text-white"
+                  asChild
+                >
+                  <a
+                    href="https://www.linkedin.com/in/allen-umunade"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Linkedin className="h-5 w-5 mr-2" />
+                    LinkedIn
+                  </a>
+                </Button>
+              </motion.div>
             </footer>
           </div>
           {/* right side projects section */}
