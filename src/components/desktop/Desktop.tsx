@@ -187,10 +187,7 @@ export const Desktop = () => {
           {/* right side projects section */}
           <div className="w-1/2 overflow-y-auto pr-4 h-full">
             {projects.map(
-              (
-                { id, category, title, description, technologies, liveLink },
-                index
-              ) => (
+              ({ id, category, title, technologies, liveLink }, index) => (
                 <motion.div
                   key={id}
                   className="mb-6"
@@ -223,7 +220,7 @@ export const Desktop = () => {
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-gray-400">{description}</p>
+                      {/* <p className="text-sm text-gray-400">{description}</p> */}
                       <Button
                         variant="ghost"
                         size="sm"
