@@ -41,8 +41,6 @@ export const Desktop = () => {
               <span className="dark:text-white text-black">
                 design engineering
               </span>
-              , gaming, <span className="dark:text-white text-black">web3</span>
-              , web animations{" "}
             </p>
 
             {/* image */}
