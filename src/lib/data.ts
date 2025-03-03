@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
     category: "Ai",
-    title: "",
+    title: "Learn with AI",
     technologies: ["NEXTJS", "TS", "Tailwind"],
     liveLink: "https://github.com/Allenade/learn-wih-ai", // Replace with actual URL
   },
